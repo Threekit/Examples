@@ -66,8 +66,4 @@ function titleCase(str) {
   return str.join(" ");
 }
 
-/****************************************************
- Insert Auth Token
-****************************************************/
-
 module.exports = { getHome, getPages };
