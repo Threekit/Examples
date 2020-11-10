@@ -1,0 +1,22 @@
+<div id="player-el" style="height: 500px"></div>
+
+<script src="https://admin.threekit.com/app/js/threekit-player.js"></script>
+
+<script>
+  /****************************************************
+   The threekitPlayer must receive these parameters
+      (1) assetId
+      (2) authToken scoped to the domain
+      (3) HTML div where the player will be embedded. Note:
+            the div must have a discrete height value
+  ****************************************************/
+  window
+    .threekitPlayer({
+      assetId: "406bd3c3-f3b4-4af9-9b5f-64e69cfbdd3f",
+      authToken: "00000000-0000-0000-0000-000000000000",
+      el: document.getElementById("player-el"),
+    })
+    .then((player) => {
+      window.player = player;
+    });
+</script>
