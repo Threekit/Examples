@@ -18,13 +18,17 @@ yarn
 
 ### Step 1: Create Auth Token
 
-Go to [Demo Token Generator](https://token-gen.demo.threekit.com/demos-public) and create a token for your local environment. `localhost:3000` is the default domain.
+Go to [Demo Token Generator](https://token-gen.demo.threekit.com/demos-public)
+and create a token for your local environment. `localhost:3000` is the default
+domain.
 
 <img src="https://i.imgur.com/06chXMS.gif" height="300px" />
 
 ### Step 2: Update Tokens
 
-Using the Auth Token you just created, enter the following command into your terminal (replace the xxx-xx-xxx w/your token). This will replace all of the dummy tokens in Threekit/Examples with an active demo token.
+Using the Auth Token you just created, enter the following command into your
+terminal (replace the xxx-xx-xxx w/your token). This will replace all of the
+dummy tokens in Threekit/Examples with an active demo token.
 
 ```
 npm run token xxx-xx-xxx
@@ -44,4 +48,8 @@ npm run dev
 
 ```
 yarn dev
+```
+
+```js iframe=abc-123
+const z = "";
 ```

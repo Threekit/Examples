@@ -1,0 +1,77 @@
+<style>
+  .app {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .attribute {
+    margin: 16px;
+  }
+</style>
+
+<div class="app">
+  <div id="player-el" style="height: 500px"></div>
+  <div>
+    <div class="attribute">
+      <label for="color">Color:</label>
+      <select name="Color" id="color" onchange="setConfig(event)">
+        <option value="Blue">Blue</option>
+        <option value="Black">Black</option>
+        <option value="Green">Green</option>
+        <option value="Grey">Grey</option>
+        <option value="Red">Red</option>
+      </select>
+    </div>
+
+    <div class="attribute">
+      <label for="wheels">Wheels:</label>
+      <select name="Wheels" id="wheels" onchange="setConfig(event)">
+        <option value="26e0c72c-77a2-4fae-a81d-c995e32187f2">
+          Aeolus Pro 3
+        </option>
+        <option value="a3819592-3f98-4d32-bedd-2c0205d3ba5b">
+          Aeolus Pro 5
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<script src="https://admin.threekit.com/app/js/threekit-player.js"></script>
+
+<script>
+  /****************************************************
+   configurator.setConfiguration takes an object with 
+   attribute names as keys.
+
+   These are all valid examples
+    { Color: "Red" } // String Attribute
+    { Wheels: "a3819592-3f98-4d32-bedd-2c0205d3ba5b" } // Part Reference Attribute
+    { Color: "Red", Wheels: "a3819592-3f98-4d32-bedd-2c0205d3ba5b" }
+  ****************************************************/
+  function setConfig(ev) {
+    const attrName = ev.target.name;
+    const value = ev.target.value;
+    window.configurator?.setConfiguration({ [attrName]: value });
+  }
+</script>
+
+<script>
+  /****************************************************
+   Initialize Player
+  ****************************************************/
+  const assetId = "079838d8-60e9-40d8-93a8-6af73c255bef";
+  const authToken = "00000000-0000-0000-0000-000000000000";
+  const el = document.getElementById("player-el");
+
+  init();
+
+  async function init() {
+    window.player = await window.threekitPlayer({
+      assetId,
+      authToken,
+      el,
+    });
+    window.configurator = await player.getConfigurator();
+  }
+</script>

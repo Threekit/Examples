@@ -1,0 +1,32 @@
+<div id="player-el" style="height: 500px"></div>
+
+<script src="https://admin.threekit.com/app/js/threekit-player.js"></script>
+
+<script>
+  const assetId = "079838d8-60e9-40d8-93a8-6af73c255bef";
+  const authToken = "00000000-0000-0000-0000-000000000000";
+  const el = document.getElementById("player-el");
+
+  const initialConfiguration = {
+    Color: "Red", // String Attribute
+    Frame: { assetId: "d0fb769e-3819-4da6-9638-8ad81c226067" }, // Part Reference Attribute
+    Wheels: { assetId: "a3819592-3f98-4d32-bedd-2c0205d3ba5b" },
+  };
+
+  async function init() {
+    const player = await window.threekitPlayer({
+      assetId,
+      authToken,
+      el,
+      initialConfiguration, // override the default configuration
+      showConfigurator: true, // use standard form
+    });
+
+    window.player = player;
+
+    const configurator = await player.getConfigurator();
+    window.configurator = configurator; // store configurator module for later use
+  }
+
+  init();
+</script>
