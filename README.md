@@ -49,7 +49,3 @@ npm run dev
 ```
 yarn dev
 ```
-
-```js iframe=abc-123
-const z = "";
-```
