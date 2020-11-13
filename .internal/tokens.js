@@ -69,8 +69,6 @@ function replaceZeroTokens(file, authToken) {
 }
 
 function replaceTokensWReg(file, authToken) {
-  console.log("regexp-tokens");
-
   return file
     .replace(
       new RegExp(`(const authToken \= \")(.*)(\")`, "g"),
